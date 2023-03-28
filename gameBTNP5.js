@@ -4,6 +4,9 @@ p5.prototype.gameBTN = function(x,y,w,h,corP,texto){
   
   if(w==null)w=48
   if(typeof w =="string"){
+  corP=w; w=48
+  }
+  else if(typeof w =="string"&&typeof h=="string"){
   corP=w; w=48+(h.length*9.5)
   }
   if(h==null)h=50.5
