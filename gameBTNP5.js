@@ -71,7 +71,7 @@ if(texto.length>13){textSize(22-(texto.length/2.7))
   
     }else{
 
-      textSize(26)
+      textSize(32)
       textAlign(CENTER)
       text(texto,x,y+11,w)
       text(texto,x,y+10,w)
