@@ -36,9 +36,9 @@ p5.prototype.gameBTN = function(x,y,w,h,corP,texto){
         fill(color4)
         rect(x+1,y+0.5,w-2,h-7,6)
         fill(color3)
-        rect(x+3,y+22.5,w-6.3,h-31,0,0,4,4)  
+        rect(x,y+11.5,w-3.3,h-31,0,0,4,4)  
         fill(corP)
-        rect(x+3,y+2.5,w-6.3,h-28,4)
+        rect(x,y-8.5,w-3.3,h-28,4)
     pop()
     
     push()
