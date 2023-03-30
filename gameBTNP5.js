@@ -1,13 +1,10 @@
-p5.prototype.gameBTN = function(x,y,w,h,corP,texto){
+p5.prototype.gameBTN = function(x,y,w,h,corP,texto,tX,tY,tSiz){
   push()
   //checagem se os parâmetros estão ocupados
   
   if(w==null)w=48
   if(typeof w =="string"){
   corP=w; w=48
-  }
-  else if(typeof w =="string"&&typeof h=="string"){
-  corP=w; w=48+(h.length*9.5)
   }
   if(h==null)h=50.5
   if(typeof h =="string"){
@@ -16,6 +13,10 @@ p5.prototype.gameBTN = function(x,y,w,h,corP,texto){
   if(corP==null) corP="#B5B6B4"
   
   if(texto==null) texto=""
+  if(tX==null) tX=x
+  if(tY==null) tY=y+10
+  
+  
   
   //atribuição de uma paleta de cores
   
@@ -39,9 +40,9 @@ p5.prototype.gameBTN = function(x,y,w,h,corP,texto){
         fill(color4)
         rect(x+1,y+0.5,w-2,h-7,6)
         fill(color3)
-        rect(x,y+11.5,w-3.3,h-31,0,0,4,4)  
+        rect(x+3,y+22.5,w-6.3,h-31,0,0,4,4)  
         fill(corP)
-        rect(x,y-8.5,w-3.3,h-28,4)
+        rect(x+3,y+2.5,w-6.3,h-28,4)
     pop()
     
     push()
@@ -52,16 +53,16 @@ p5.prototype.gameBTN = function(x,y,w,h,corP,texto){
 
     fill("#fff")
 
-    
-if(texto.length>13){textSize(22-(texto.length/2.7))
+   
+if(tSiz==null&&texto.length>13){textSize(22-(texto.length/2.7))
       
       textWrap(WORD)
       textLeading(17)
       textAlign(CENTER)
-      text(texto,x,y+9,w)
-      text(texto,x,y+8,w)
+      text(texto,x,y+16,w)
+      text(texto,x,y+15,w)
                     
-} else if(texto.length>8){
+} else if(tSiz==null&&texto.length>8){
   
       textWrap(WORD)
       textSize(22-(texto.length/3))
@@ -69,13 +70,18 @@ if(texto.length>13){textSize(22-(texto.length/2.7))
       text(texto,x,y+15,w)
       text(texto,x,y+14,w)
   
-    }else{
+    }else if(tSiz==null){
 
-      textSize(32)
+      textSize(26)
       textAlign(CENTER)
       text(texto,x,y+11,w)
       text(texto,x,y+10,w)
 
+    }else{
+      textSize(tSiz)
+      textAlign(CENTER)
+      text(texto,tX,tY+1,w)
+      text(texto,tX,tY,w)
     }
     pop()
   pop()
