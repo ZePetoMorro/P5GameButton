@@ -1,5 +1,7 @@
 p5.prototype.gameBTN = function(x,y,w,h,corP,texto,tX,tY,tSiz){
   push()
+	rectMode(CORNER)
+  
   //checagem se os parâmetros estão ocupados
   
   if(w==null)w=48
