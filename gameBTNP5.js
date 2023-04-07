@@ -186,7 +186,7 @@ p5.prototype.pauseIcon=function(x,y,corP){
   pop()
   pop()
 }
-p5.prototype.fullscreenIcon=function(x,y,corP){
+p5.prototype.fsIcon=function(x,y,corP){
   fs = fullscreen();
   onclick=function (){
     if(mouseX>x&&mouseX<x+44&&mouseY>y&&mouseY<y+44)
