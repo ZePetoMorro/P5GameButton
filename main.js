@@ -1,3 +1,4 @@
+
 var r,g,b
 botaoW=48
 botaoH=50.5
@@ -5,6 +6,7 @@ bvec=[]
 function setup() {
   createCanvas(400, 400);
   r=random(255); g=random(255); b=random(255)
+  
 }
 
 function draw() {
@@ -38,26 +40,37 @@ function draw() {
   for(i=0;i<15;i++){
     gameBTN(bvec[i].x,bvec[i].y,iconId[i+1])
   }
-  //exemplos de Icons
   /*
-  gearIcon(bvec[0].x,bvec[0].y)
-  xicon(bvec[1].x,bvec[1].y)
-  resetIcon(bvec[2].x,bvec[2].y)
-  perfilIcon(bvec[5].x,bvec[5].y)
+  //exemplos de Icons
+  gameBTN(bvec[0].x,bvec[0].y,"GEAR")
+  //gearIcon(bvec[0].x,bvec[0].y)
+  gameBTN(bvec[1].x,bvec[1].y,"X")
+  //xicon(bvec[1].x,bvec[1].y)
+  //resetIcon(bvec[2].x,bvec[2].y)
+  gameBTN(bvec[2].x,bvec[2].y,"RESET")
+  //perfilIcon(bvec[5].x,bvec[5].y)
+  gameBTN(bvec[5].x,bvec[5].y,"PRFL")
   
-  menuIcon(bvec[4].x,bvec[4].y)
-  pauseIcon(bvec[7].x,bvec[7].y)
-  fullscreenIcon(bvec[10].x,bvec[10].y)
-  startIcon(bvec[13].x,bvec[13].y)
+  //menuIcon(bvec[4].x,bvec[4].y)
+  gameBTN(bvec[4].x,bvec[4].y,"MENU")
+  //pauseIcon(bvec[7].x,bvec[7].y)
+  gameBTN(bvec[7].x,bvec[7].y,"PAUSE")
+  //fullscreenIcon(bvec[10].x,bvec[10].y)
+  gameBTN(bvec[10].x,bvec[10].y,"FS")
+  //startIcon(bvec[13].x,bvec[13].y)
+  gameBTN(bvec[13].x,bvec[13].y,"START")
   
-  celularIcon(bvec[14].x,bvec[14].y)
-  muteIcon(bvec[11].x,bvec[11].y)
-  soundIcon(bvec[8].x,bvec[8].y)
+  //celularIcon(bvec[14].x,bvec[14].y)
+  gameBTN(bvec[14].x,bvec[14].y,"PHONE")
+  //muteIcon(bvec[11].x,bvec[11].y)
+  gameBTN(bvec[11].x,bvec[11].y,"MUTE")
+  //soundIcon(bvec[8].x,bvec[8].y)
+  gameBTN(bvec[8].x,bvec[8].y,"SOUND")
   
-  dirIcon("LFT",bvec[3].x,bvec[3].y)
-  dirIcon("DWN",bvec[6].x,bvec[6].y)
-  dirIcon("UP",bvec[9].x,bvec[9].y)
-  dirIcon("RGT",bvec[12].x,bvec[12].y)
+  gameBTN(bvec[3].x,bvec[3].y,"LFT")
+  gameBTN(bvec[6].x,bvec[6].y,"DWN")
+  gameBTN(bvec[9].x,bvec[9].y,"UP")
+  gameBTN(bvec[12].x,bvec[12].y,"RGT")
   */
   
 }
