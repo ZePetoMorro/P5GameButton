@@ -1,8 +1,9 @@
+
 p5.prototype.gameBTN = function(x,y,w,h,corP,texto,tX,tY,tSiz,id){
-  push()
-  
-  //checagem se os parâmetros estão ocupados
   iconId=["blank","GEAR","X","RESET","LFT","MENU","PRFL","DWN","PAUSE","SOUND","UP","FS","MUTE","RGT","START","PHONE"]
+  push()
+  //checagem se os parâmetros estão ocupados
+  
   if(id==null){
     id="blank"
   }
@@ -12,12 +13,12 @@ p5.prototype.gameBTN = function(x,y,w,h,corP,texto,tX,tY,tSiz,id){
   if(CSS.supports('color',w)){
   corP=w; w=48
   }
+  if(CSS.supports('color',h)){
+  corP=h;h=50.5
+  }
   if(h==null)h=50.5
   if(typeof h =="string"){
   texto=h;h=50.5
-  }
-  if(CSS.supports('color',h){
-  corP=h; h=50.5   
   }
   if(corP==null) corP="#B5B6B4"
   
