@@ -1,15 +1,23 @@
-p5.prototype.gameBTN = function(x,y,w,h,corP,texto,tX,tY,tSiz){
+p5.prototype.gameBTN = function(x,y,w,h,corP,texto,tX,tY,tSiz,id){
   push()
   
   //checagem se os parâmetros estão ocupados
-  
+  iconId=["blank","GEAR","X","RESET","LFT","MENU","PRFL","DWN","PAUSE","SOUND","UP","FS","MUTE","RGT","START","PHONE"]
+  if(id==null){
+    id="blank"
+  }
+  for(io=0;io<16;io++){
+    if(w==iconId[io]){id=w;w=48}}
   if(w==null)w=48
-  if(typeof w =="string"){
+  if(CSS.supports('color',w)){
   corP=w; w=48
   }
   if(h==null)h=50.5
   if(typeof h =="string"){
   texto=h;h=50.5
+  }
+  if(CSS.supports('color',h){
+  corP=h; h=50.5   
   }
   if(corP==null) corP="#B5B6B4"
   
@@ -83,6 +91,397 @@ if(tSiz==null&&texto.length>13){textSize(22-(texto.length/2.7))
       textAlign(CENTER)
       text(texto,tX,tY+1,w)
       text(texto,tX,tY,w)
+    }
+    pop()
+    push()
+    switch(id){
+      case "blank":
+      
+      break
+      case "GEAR":
+      strokeWeight(8)
+  stroke(color5)
+noFill()
+circle(x+23.5,y+22.5,18)
+  
+  noStroke()
+translate(x+23.5,y+22.5);
+	for (var i = 0; i < 8; i++) {
+
+		push();
+        fill(color5)
+
+		rotate(TWO_PI * i / 8);
+
+		rect(10, -4 ,8,8,2);
+
+		pop();
+
+	}
+      break
+      case "X":
+      noFill()
+  strokeWeight(6)
+  stroke(color5)
+  strokeJoin(ROUND);
+  beginShape()
+  vertex(x+11,y+10)
+  vertex(x+36,y+35)
+  vertex(x+36,y+35)
+  endShape()
+  beginShape()
+  vertex(x+11,y+35)
+  vertex(x+36,y+10)
+  vertex(x+36,y+10)
+  endShape()
+      break
+      case "RESET":
+      this.x=x
+      this.y=y
+      numPoints = 360;
+   angleIncrement = TWO_PI / numPoints;
+   let radius = 12;
+  noFill()
+  stroke(color5)
+  strokeWeight(5)
+  beginShape();
+  for(let i = 0 ; i < numPoints - 85; i++){
+    let angle = angleIncrement * i;
+    let x = this.x+26 + sin(angle) * radius;
+    let y = this.y+22 + cos(angle) * radius;
+    curveVertex(x, y);
+  }
+  endShape();
+  strokeJoin(ROUND)
+  beginShape();
+      vertex(this.x+8, this.y+19);
+      vertex(this.x+8, this.y+19);
+      vertex(this.x+14, this.y+27);
+      vertex(this.x+21,this.y+19)
+    endShape()
+      break
+      case "MENU":
+      noFill()
+  strokeWeight(6)
+  stroke(color5)
+  strokeJoin(ROUND);
+  for(i=12;i<35;i+=11){
+  beginShape()
+  vertex(x+11,y+i)
+  vertex(x+36,y+i)
+  vertex(x+36,y+i)
+  endShape()}
+      break
+      case "PRFL":
+      noFill()
+  strokeWeight(4)
+  stroke(color5)
+  circle(x+23.5,y+22.5,32.5)
+  circle(x+23.5,y+14.5,12.5)
+
+beginShape()
+  curveVertex(x+9.5,y+65)
+  curveVertex(x+9.5,y+27)
+  curveVertex(x+39,y+27)
+  curveVertex(x+39,y+65)
+endShape()
+      break
+      case "PAUSE":
+      noFill()
+  strokeWeight(8)
+  stroke(color5)
+  strokeJoin(ROUND);
+  
+  beginShape()
+  vertex(x+17,y+12)
+  vertex(x+17,y+33)
+  vertex(x+17,y+33)
+  endShape()
+  beginShape()
+  vertex(x+30,y+12)
+  vertex(x+30,y+33)
+  vertex(x+30,y+33)
+  endShape()
+      break
+      case "FS":
+      fs = fullscreen();
+  onclick=function (){
+    if(mouseX>x&&mouseX<x+44&&mouseY>y&&mouseY<y+44)
+
+      fullscreen(!fs)
+  }
+      noFill()
+  strokeWeight(5)
+  stroke(color5)
+  strokeJoin(ROUND);
+  if(!fs){
+  beginShape()
+  vertex(x+18,y+10)
+  vertex(x+11,y+10)
+  vertex(x+11,y+17)
+  endShape()
+  beginShape()
+  vertex(x+30,y+10)
+  vertex(x+37,y+10)
+  vertex(x+37,y+17)
+  endShape()
+  beginShape()
+  vertex(x+11,y+29)
+  vertex(x+11,y+36)
+  vertex(x+18,y+36)
+  endShape()
+  beginShape()
+  vertex(x+37,y+29)
+  vertex(x+37,y+36)
+  vertex(x+30,y+36)
+  endShape()
+  }else{
+  beginShape()
+  vertex(x+11,y+17)
+  vertex(x+18,y+17)
+  vertex(x+18,y+10)
+  endShape()
+  beginShape()
+  vertex(x+30,y+10)
+  vertex(x+30,y+17)
+  vertex(x+37,y+17)
+  endShape()
+  beginShape()
+  vertex(x+18,y+36)
+  vertex(x+18,y+29)
+  vertex(x+11,y+29)
+  endShape()
+  beginShape()
+  vertex(x+30,y+36)
+  vertex(x+30,y+29)
+  vertex(x+37,y+29)
+  endShape()
+  }
+      break
+      case "START":
+      
+      fill(color5)
+  strokeWeight(6)
+  stroke(color5)
+  strokeJoin(ROUND);
+  beginShape();
+    vertex(x+13, y+9);
+    vertex(x+36, y+23.5);
+    vertex(x+13, y+36);
+    vertex(x+13,y+9)
+  endShape()
+      
+      break
+      case "PHONE":
+      this.x=x
+      this.y=y
+      noFill()
+  stroke(color5)
+  strokeWeight(3.5)
+  push()
+  numPoints = 360;
+  angleIncrement = -TWO_PI / numPoints;
+   let radiuss = 16;
+  
+  beginShape();
+  for(let i = 90 ; i < numPoints - 180; i++){
+    let angle = angleIncrement * i;
+    let x = this.x+23 + sin(angle) * radiuss;
+    let y = this.y+22.5 + cos(angle) * radiuss;
+    curveVertex(x, y);
+  }
+  endShape();
+  beginShape()
+  vertex(this.x+22,this.y+8)
+  vertex(this.x+19,this.y+11)
+  vertex(this.x+19,this.y+11)
+  endShape()
+  pop()
+  push()
+  numPoints = 360;
+  angleIncrement = TWO_PI / numPoints;
+  
+  beginShape();
+  for(let i = 0 ; i < numPoints - 270; i++){
+    let angle = angleIncrement * i;
+    let x = this.x+24.5 + sin(angle) * radiuss;
+    let y = this.y+23 + cos(angle) * radiuss;
+    curveVertex(x, y);
+  }
+  endShape();
+  beginShape()
+  vertex(this.x+24.5,this.y+38)
+  vertex(this.x+28,this.y+35)
+  vertex(this.x+28,this.y+35)
+  endShape()
+  pop()
+  push()
+  strokeJoin(ROUND)
+  strokeWeight(3.5)
+  beginShape()
+  vertex(x+28,y+9)
+  vertex(x+10,y+26)
+  vertex(x+19,y+36)
+  vertex(x+37,y+19)
+  vertex(x+28,y+9)
+  endShape()
+  strokeWeight(2.5)
+  beginShape()
+  vertex(x+28,y+14)
+  vertex(x+32,y+19)
+  endShape()
+      
+      break
+      case "MUTE":
+      
+      noFill()
+  strokeWeight(4)
+  stroke(color5)
+  strokeJoin(ROUND);
+  beginShape()
+  vertex(x+26,y+13)
+  vertex(x+14,y+20)
+  vertex(x+8,y+20)
+  vertex(x+8,y+29)
+  vertex(x+14,y+29)
+  vertex(x+26,y+36)
+  endShape()
+  beginShape()
+  curveVertex(x-2,y+13)
+  curveVertex(x+26,y+13)
+  curveVertex(x+26,y+36)
+  curveVertex(x-2,y+36)
+  endShape()
+  beginShape()
+  curveVertex(x+24,y+21)
+  curveVertex(x+34,y+21)
+  curveVertex(x+34,y+29)
+  curveVertex(x+24,y+29)
+  endShape()
+  beginShape()
+  curveVertex(x+25,y+18)
+  curveVertex(x+40,y+18)
+  curveVertex(x+40,y+32)
+  curveVertex(x+25,y+32)
+  endShape()
+  beginShape()
+  vertex(x+10,y+10)
+  vertex(x+38,y+38)
+  vertex(x+38,y+38)
+  endShape()
+  beginShape()
+  vertex(x+10,y+38)
+  vertex(x+38,y+10)
+  vertex(x+38,y+10)
+  endShape()
+  
+      break
+      case "SOUND":
+      
+      noFill()
+  strokeWeight(4)
+  stroke(color5)
+  strokeJoin(ROUND);
+  beginShape()
+  vertex(x+26,y+13)
+  vertex(x+14,y+20)
+  vertex(x+8,y+20)
+  vertex(x+8,y+29)
+  vertex(x+14,y+29)
+  vertex(x+26,y+36)
+  endShape()
+  beginShape()
+  curveVertex(x-2,y+13)
+  curveVertex(x+26,y+13)
+  curveVertex(x+26,y+36)
+  curveVertex(x-2,y+36)
+  endShape()
+  beginShape()
+  curveVertex(x+24,y+21)
+  curveVertex(x+34,y+21)
+  curveVertex(x+34,y+29)
+  curveVertex(x+24,y+29)
+  endShape()
+  beginShape()
+  curveVertex(x+25,y+18)
+  curveVertex(x+40,y+18)
+  curveVertex(x+40,y+32)
+  curveVertex(x+25,y+32)
+  endShape()
+      
+      break
+      case "LFT":
+      this.x=x
+      this.y=y
+      noFill()
+      stroke(color5)
+      strokeWeight(6)
+      strokeJoin(ROUND)
+      beginShape();
+      vertex(this.x+14.5,this.y+22.5)
+      vertex(this.x+34.5,this.y+22.5)
+      endShape();
+      beginShape();
+      vertex(this.x+16.5, this.y+15);
+      vertex(this.x+10.5, this.y+22.5);
+      vertex(this.x+16.5, this.y+30);
+      endShape()
+      break
+      case "RGT":
+      this.x=x
+      this.y=y
+      noFill()
+      stroke(color5)
+      
+      strokeWeight(6)
+      strokeJoin(ROUND)
+      
+      beginShape();
+      vertex(this.x+13,this.y+22.5)
+      vertex(this.x+33,this.y+22.5)
+      endShape();
+      beginShape();
+      vertex(this.x+31, this.y+15);
+      vertex(this.x+37, this.y+22.5);
+      vertex(this.x+31, this.y+30);
+      endShape()
+      break
+      case "DWN":
+      this.x=x
+      this.y=y
+      noFill()
+      stroke(color5)
+      
+      strokeWeight(6)
+      strokeJoin(ROUND)
+      beginShape();
+      vertex(this.x+24,this.y+10)
+      vertex(this.x+24,this.y+35)
+      endShape();
+      beginShape();
+      vertex(this.x+15, this.y+28);
+      vertex(this.x+24, this.y+37);
+      vertex(this.x+33, this.y+28);
+      endShape()
+      break
+      case "UP":
+      this.x=x
+      this.y=y
+      noFill()
+      stroke(color5)
+      
+      strokeWeight(6)
+      strokeJoin(ROUND)
+      beginShape();
+      vertex(x+24,y+10)
+      vertex(x+24,y+35)
+      endShape();
+      beginShape();
+      vertex(x+15, y+17);
+      vertex(x+24, y+8);
+      vertex(x+33, y+17);
+      endShape()
+      break
     }
     pop()
   pop()
