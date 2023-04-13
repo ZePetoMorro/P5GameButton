@@ -36,9 +36,10 @@ function draw() {
     }
   }
   for(i=0;i<15;i++){
-    gameBTN(bvec[i].x,bvec[i].y)
+    gameBTN(bvec[i].x,bvec[i].y,iconId[i+1])
   }
   //exemplos de Icons
+  /*
   gearIcon(bvec[0].x,bvec[0].y)
   xicon(bvec[1].x,bvec[1].y)
   resetIcon(bvec[2].x,bvec[2].y)
@@ -57,6 +58,6 @@ function draw() {
   dirIcon("DWN",bvec[6].x,bvec[6].y)
   dirIcon("UP",bvec[9].x,bvec[9].y)
   dirIcon("RGT",bvec[12].x,bvec[12].y)
-  
+  */
   
 }
